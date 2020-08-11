@@ -1,0 +1,18 @@
+<launch>
+
+<arg name="is_average_output_odom"      default="true"/>
+
+<arg name="input_odom_path"      default="$(find AverageVioProc)/_average_/_input_average_odom_/"/>
+<arg name="output_path"      default="$(find AverageVioProc)/_average_/_output_average_/"/>
+
+<node name="AverageVioProc" pkg="AverageVioProc"
+        type="AverageVioProc_node" output="screen">    
+      
+      <param name="output_path"   value="$(arg output_path)"/>
+      <param name="input_odom_path"   value="$(arg input_odom_path)"/>
+
+      <param name="is_average_output_odom"   value="$(arg is_average_output_odom)"/>
+
+</node>
+
+</launch>
